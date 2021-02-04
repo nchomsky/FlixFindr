@@ -1,4 +1,26 @@
 //////////////////////////////////
+// Colors
+
+// Basic Colors
+$color-white: #fff;
+$color-black: black;
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+// Color Pallette
+$color-1: #f9f7f7;
+
+$color-2: #dbe2ef;
+$color-2-dark: #b8c6df;
+
+$color-3: #3f72af;
+
+$color-4: #112d4e;
+
+//////////////////////////////////
 // Resets
 
 *,
@@ -18,8 +40,10 @@ body {
   align-content: center;
   line-height: 1.6;
   color: black;
-  background-color: darkgray;
+  background-color: $color-grey-dark-1;
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
   min-height: 100vh;
 }
+
