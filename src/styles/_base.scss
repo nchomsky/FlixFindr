@@ -1,0 +1,25 @@
+//////////////////////////////////
+// Resets
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  align-content: center;
+  line-height: 1.6;
+  color: black;
+  background-color: darkgray;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}

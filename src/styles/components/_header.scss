@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  background-color: red;
+  padding: 1rem 0;
+
+  h3 {
+    font-size: 4rem;
+  }
+}

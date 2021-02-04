@@ -1,12 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>FlixFindr</h1>
-    </div>
-  );
+import Container from './Container/Container';
+import '../App.scss';
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Route path="/" exact component={Container} />
+      </div>
+    );
+  }
 }
 
 export default App;
