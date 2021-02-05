@@ -1,10 +1,12 @@
 .search {
   display: flex;
   align-items: center;
+  flex: 0 0 30%;
 
-  &__input{
-    color: inherit;
-    background-color: gray;
+  &__input {
+    color: $color-grey-dark;
+    background-color: $color-grey-dark-4;
+    font-size: 2rem;
     border: none;
     padding: 0.7rem 2rem;
     border-radius: 10rem;
@@ -13,9 +15,8 @@
     margin-right: -3.25rem;
 
     &:focus {
-        outline: none;
-        width: 100%;
-        background-color: white;
-      }
+      outline: none;
+      width: 100%;
+    }
   }
 }

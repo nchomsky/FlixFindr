@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header/Header';
+import MovieGrid from './MovieGrid/MovieGrid';
 
 class Container extends Component {
 
@@ -7,6 +8,9 @@ class Container extends Component {
         return (
             <div className="container">
                 <Header />
+                <div className="grid">
+                    <MovieGrid />
+                </div>
             </div>
         );
     }

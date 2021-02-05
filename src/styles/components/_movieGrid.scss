@@ -1,0 +1,14 @@
+.grid {
+  padding: 5rem 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
+
+  &__container {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: repeat(2, 30rem);
+    grid-template-columns: repeat(4, 30rem);
+  }
+}

@@ -8,7 +8,9 @@ $color-grey-light-1: #f7f7f7;
 $color-grey-light-2: #eee;
 $color-grey-dark: #777;
 $color-grey-dark-2: #999;
-$color-grey-dark-3: #333;
+$color-grey-dark-3: #1c1c1c;
+$color-grey-dark-4: #161616;
+$color-grey-dark-5: #111111;
 
 // Color Pallette
 $color-1: #f9f7f7;
@@ -16,9 +18,9 @@ $color-1: #f9f7f7;
 $color-2: #dbe2ef;
 $color-2-dark: #b8c6df;
 
-$color-3: #3f72af;
+$color-3: #e31c25;
 
-$color-4: #112d4e;
+$color-4: #bb000e;
 
 //////////////////////////////////
 // Resets
@@ -39,11 +41,10 @@ body {
   box-sizing: border-box;
   align-content: center;
   line-height: 1.6;
-  color: black;
-  background-color: $color-grey-dark-1;
+  color: $color-3;
+  background-color: $color-grey-dark-3;
   background-size: cover;
   background-repeat: no-repeat;
-  overflow: hidden;
+  overflow: auto;
   min-height: 100vh;
 }
-
