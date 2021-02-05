@@ -3,7 +3,7 @@ import React from 'react';
 const SearchBar = () => {
     return (
         <form noValidate autoComplete="off" className="search">
-            <input type="text" value="Search" className="search__input"></input>
+            <input type="text" placeholder="Search Movies" className="search__input"></input>
         </form>
     );
 

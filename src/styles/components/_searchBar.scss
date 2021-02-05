@@ -1,7 +1,10 @@
 .search {
   display: flex;
   align-items: center;
-  flex: 0 0 30%;
+  justify-content: center;
+  align-self: center;
+  flex: 0 0 35%;
+  margin: 0 auto;
 
   &__input {
     color: $color-grey-dark;

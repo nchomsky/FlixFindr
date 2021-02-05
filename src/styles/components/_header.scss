@@ -1,11 +1,11 @@
 .header {
   display: flex;
-  justify-content: space-between;
-  align-content: center;
+  align-items: center;
+  justify-content: center;
   background-color: $color-grey-dark-5;
-  padding: 1rem 0;
+  padding: 0.5rem 8rem;
 
-  h3 {
+  &__logo {
     font-size: 4rem;
   }
 }
