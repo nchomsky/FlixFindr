@@ -9,6 +9,7 @@ class Header extends Component {
             <header className="header">
                 <Logo />
                 <SearchBar />
+                <div style={{ visibility: 'hidden', width: '185px' }}></div>
             </header>
         );
     }

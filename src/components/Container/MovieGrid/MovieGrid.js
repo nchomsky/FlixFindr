@@ -1,24 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import MovieItem from './MovieItem/MovieItem';
+import { connect } from 'react-redux';
+import { fetchMovies } from '../../../actions/index';
+class MovieGrid extends Component {
 
-const MovieGrid = () => {
+    componentDidMount() {
+        this.props.fetchMovies();
+    }
 
-    return (
-        <div className="grid__container">
-            <MovieItem />
-            <MovieItem />
-            <MovieItem />
-            <MovieItem />
-            <MovieItem />
-            <MovieItem />
-            <MovieItem />
-            <MovieItem />
-            <MovieItem />
-            <MovieItem />
-            <MovieItem />
-            <MovieItem />
-        </div>
-    );
+    render() {
+        return (
+            <div className="grid__container">
+                <MovieItem />
+                <MovieItem />
+                <MovieItem />
+                <MovieItem />
+                <MovieItem />
+                <MovieItem />
+                <MovieItem />
+                <MovieItem />
+                <MovieItem />
+                <MovieItem />
+                <MovieItem />
+                <MovieItem />
+            </div>
+        );
+    }
+
 };
 
-export default MovieGrid;
+export default connect(null, { fetchMovies: fetchMovies })(MovieGrid);
