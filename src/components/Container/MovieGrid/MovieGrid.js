@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import MovieItem from './MovieItem/MovieItem';
 import { connect } from 'react-redux';
-import { fetchMovies } from '../../../actions/index';
+import { loadPopularMovies } from '../../../actions/index';
 class MovieGrid extends Component {
 
     componentDidMount() {
-        this.props.fetchMovies();
+        this.props.loadPopularMovies();
     }
 
     render() {
+        console.log(this.props.movies);
         return (
             <div className="grid__container">
                 <MovieItem />
@@ -29,4 +30,11 @@ class MovieGrid extends Component {
 
 };
 
-export default connect(null, { fetchMovies: fetchMovies })(MovieGrid);
+//connects the dat
+const mapStateToProps = (state) => {
+    // movies is the prop and state is mapped to the movies prop
+    //the movies prop is accessed by this component
+    return { movies: state.movies };
+};
+
+export default connect(mapStateToProps, { loadPopularMovies: loadPopularMovies })(MovieGrid);
