@@ -1,9 +1,18 @@
 import React from 'react';
 
-const MovieItem = () => {
+const MovieItem = ({ movie }) => {
 
     return (
-        <div className="item"></div>
+        <div className="movieItem">
+            <div className="movieItem__image">{
+                movie.poster_path ? (
+                    <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={`${movie.title} Poster`} />
+                ) : <div></div>
+            }</div>
+            <div className="movieItem__titleYear">
+                <h4>{movie.title} - {movie.release_date.slice(0, 3)}</h4>
+            </div>
+        </div>
     );
 };
 

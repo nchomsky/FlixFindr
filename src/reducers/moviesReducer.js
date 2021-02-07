@@ -1,6 +1,7 @@
 
 const initialState = {
-    movies: []
+    movies: [],
+    movieSelected: false
 }
 
 export default (state = initialState, action) => {
@@ -8,12 +9,12 @@ export default (state = initialState, action) => {
         case 'LOAD_POPULAR_MOVIES':
             return {
                 ...state,
-                popularMovies: [action.payload.results]
+                movies: action.payload.results
             };
         case 'SEARCH_MOVIES':
             return {
                 ...state,
-                SearchMovies: [...state, action.payload]
+                movies: [action.payload.results]
             };
         default:
             return state;
