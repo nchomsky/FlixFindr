@@ -18,7 +18,6 @@ class SearchBar extends Component {
     }
 
     render() {
-        console.log(this.props.term);
 
         return (
             <form noValidate autoComplete="off" onSubmit={this.onFormSubmit} className="search">

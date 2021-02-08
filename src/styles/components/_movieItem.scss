@@ -30,6 +30,10 @@
       font-size: 3rem;
       color: black;
     }
+
+    @include respond(small-desktop) {
+      object-fit: scale-down;
+    }
   }
 
   &:hover {

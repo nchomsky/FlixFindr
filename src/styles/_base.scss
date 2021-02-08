@@ -1,3 +1,45 @@
+/////////////////////////////////
+// Breakpoints
+
+// Media Query Manager
+// 0-600px phone
+// 600-900px tablet(portrait)
+//900-1200px tablet(landscacpe)
+//1800px+ big desktop
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    } //600px / 16px(default font-size) = 37.5em
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    } //900px
+  }
+  // @if $breakpoint == tab-land-small {
+  //   @media (max-width: 66em) {
+  //     @content;
+  //   } //1056px
+  // }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == small-desktop {
+    @media (max-width: 95em) {
+      @content;
+    } //1318px
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {
+      @content;
+    } //1800px
+  }
+}
+
 //////////////////////////////////
 // Colors
 
@@ -35,6 +77,26 @@ $color-4: #bb000e;
 
 html {
   font-size: 62.5%;
+
+  @include respond(small-desktop) {
+    // width < 1318?
+    font-size: 56.25%; //1rem = 9px, 9/16 = 56.25%
+  }
+
+  @include respond(tab-land) {
+    // width < 1200?
+    font-size: 50%; //1rem = 9px, 9/16 = 56.25%
+  }
+
+  @include respond(tab-port) {
+    // width < 900?
+    font-size: 40%; //1rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(phone) {
+    // width < 600
+    font-size: 30%;
+  }
 }
 
 body {

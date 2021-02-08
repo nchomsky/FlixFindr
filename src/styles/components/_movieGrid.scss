@@ -12,5 +12,21 @@
     align-items: start;
     grid-template-rows: repeat(5, 35rem);
     grid-template-columns: repeat(4, 30rem);
+
+    @include respond(tab-land) {
+      // width < 1200?
+      grid-template-rows: repeat(7, 35rem);
+      grid-template-columns: repeat(3, 30rem);
+    }
+
+    @include respond(tab-port) {
+      grid-template-rows: repeat(10, 35rem);
+      grid-template-columns: repeat(2, 30rem);
+    }
+
+    @include respond(phone) {
+      grid-template-rows: repeat(20, 35rem);
+      grid-template-columns: repeat(1, 20rem);
+    }
   }
 }

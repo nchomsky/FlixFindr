@@ -22,11 +22,49 @@
   &__content {
     width: 70rem;
     background-color: $color-white;
-    height: 60rem;
+    height: 25rem;
     box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
     border-radius: 0.3rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     overflow: hidden;
+    font-family: Lato, sans-serif;
+
+    &--title {
+      text-align: center;
+      font-family: Oswald, sans-serif;
+      font-size: 4rem;
+      padding: 1rem 2rem;
+    }
+
+    &--overview {
+      padding: 0 3rem;
+      font-size: 1.5rem;
+      color: $color-black;
+    }
+
+    &--button {
+      text-decoration: none;
+      color: $color-3;
+      align-self: center;
+      background-color: $color-white;
+      border: 1px solid $color-3;
+      border-radius: 5px;
+      width: 10rem;
+      margin: 1rem 0rem;
+      font-size: 1.5rem;
+      padding: 0.25rem 0.2rem;
+
+      &:focus {
+        text-decoration: none;
+        outline: none;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgba($color-4, 0.1);
+      }
+    }
   }
 }

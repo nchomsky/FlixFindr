@@ -20,6 +20,7 @@ export const searchMovies = (term) => {
         });
     };
 };
+
 export const loadPopularMovies = () => {
     return async (dispatch) => {
         const response = await movies.get('/movie/popular?', {
@@ -35,11 +36,32 @@ export const loadPopularMovies = () => {
     };
 };
 
+export const fetchMovieDetails = (id) => {
+    return async (dispatch) => {
+        const response = await movies.get(`/movie/${id}?`, {
+            params: {
+                api_key: KEY,
+                language: 'en-US'
+            }
+        });
+        dispatch({
+            type: 'FETCH_MOVIE_DETAILS',
+            payload: response.data
+        });
+    };
+};
+
 export const inputChange = (value) => {
     return {
         type: 'INPUT_CHANGE',
         payload: value
     }
-}
+};
 
-//If i want to fetch specific details I can make a fetchDetails action creator
+// Select movie ID
+export const selectedMovie = (id) => {
+    return {
+        type: 'SELECT_MOVIE',
+        payload: id
+    }
+};

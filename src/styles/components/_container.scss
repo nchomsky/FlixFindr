@@ -1,6 +1,6 @@
 .container {
   max-width: 200rem;
-  margin: 10rem 30rem;
+  margin: 10rem 20rem;
   background-color: $color-grey-dark-4;
   border-radius: 10px;
   overflow: hidden;
@@ -8,4 +8,14 @@
   flex-flow: column;
 
   min-height: 80rem;
+
+  @include respond(small-desktop) {
+    // width < 1318?
+    margin: 5rem 10rem;
+  }
+
+  @include respond(tab-land) {
+    // width < 1200?
+    margin: 0rem;
+  }
 }
