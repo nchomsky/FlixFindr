@@ -1,8 +1,6 @@
 # FlixFindr
 A Web App that allows you to search for movies that you want to watch. Built with React and Redux.
 
-Try it out [here](https://rock-paper-scissors-nc.herokuapp.com/)!
-
 ## Built Using:
 * React
   * React Router
