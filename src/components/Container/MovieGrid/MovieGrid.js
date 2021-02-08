@@ -2,19 +2,18 @@ import React, { Component } from 'react';
 import MovieItem from './MovieItem/MovieItem';
 import MovieNotFound from './MovieNotFound/MovieNotFound'
 import { connect } from 'react-redux';
-import { searchMovies } from '../../../actions/index';
+import { loadPopularMovies } from '../../../actions/index';
 
 class MovieGrid extends Component {
 
     componentDidMount() {
-        this.props.searchMovies();
+        this.props.loadPopularMovies();
     }
 
     // Add componentDidUpdate to compare prior state to the newState and have it rerender the movies?
     //Or will that happen automatically with redux form
 
     render() {
-        console.log(this.props.movies);
         if (this.props.movies.length !== 0) {
             return (
                 <div className="grid__container">
@@ -42,8 +41,8 @@ const mapStateToProps = (state) => {
     //the movies prop is accessed by this component
     return {
         movies: state.movies.movies,
-        searched: state.searched
+        searched: state.movies.searched
     };
 };
 
-export default connect(mapStateToProps, { searchMovies: searchMovies })(MovieGrid);
+export default connect(mapStateToProps, { loadPopularMovies: loadPopularMovies })(MovieGrid);

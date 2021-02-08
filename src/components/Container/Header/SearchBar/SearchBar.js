@@ -1,21 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { searchMovies } from '../../../../actions';
+import { searchMovies, inputChange, loadPopularMovies } from '../../../../actions';
 
-const SearchBar = () => {
+class SearchBar extends Component {
 
-    const onSearch = (term) => {
-        console.log(term);
-        searchMovies(term);
+    handleChange = (event) => {
+        this.props.inputChange(event.target.value);
+        if (event.target.value === "") {
+            this.props.loadPopularMovies();
+        }
+
     }
 
-    return (
-        <form noValidate autoComplete="off" className="search">
-            <input type="text" placeholder="Search Movies" className="search__input" onChange={e => onSearch(e.currentTarget.value)}></input>
-        </form>
-    );
+    onFormSubmit = (event) => {
+        event.preventDefault();
+        this.props.searchMovies(this.props.term);
+    }
 
+    render() {
+        console.log(this.props.term);
+
+        return (
+            <form noValidate autoComplete="off" onSubmit={this.onFormSubmit} className="search">
+                <input type="text" placeholder="Search Movies" className="search__input" value={this.props.term} onChange={this.handleChange}></input>
+            </form>
+        );
+    }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        term: state.movies.searchQuery,
+    };
+};
 
-export default connect(null, { searchMovies: searchMovies })(SearchBar);
+
+export default connect(mapStateToProps, {
+    searchMovies: searchMovies,
+    inputChange: inputChange,
+    loadPopularMovies: loadPopularMovies
+})(SearchBar);

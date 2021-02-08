@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import MovieModal from '../../../MovieModal/MovieModal';
 
 
 const MovieItem = ({ movie }) => {
@@ -9,7 +10,7 @@ const MovieItem = ({ movie }) => {
             <div className="movieItem">
                 <div className="movieItem__titleYear">
                     <h4>{movie.title}</h4>
-                    <h4>{movie.release_date.slice(0, 4)}</h4>
+                    <h4>{movie.release_date ? movie.release_date.slice(0, 4) : 'No Release Date Available'}</h4>
                 </div>
                 <div className="movieItem__image">{
                     movie.poster_path ? (
@@ -18,6 +19,7 @@ const MovieItem = ({ movie }) => {
                 }
                 </div>
             </div>
+            {/* <MovieModal movie={movie} /> */}
         </Link>
     );
 };

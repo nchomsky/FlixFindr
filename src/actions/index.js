@@ -2,13 +2,13 @@ import movies from '../apis/movies';
 const KEY = '01300e67fc753328e53597dcb77de4b4';
 
 //With thunk can return a asynchronous function instead of an object that is typically required
-export const searchMovies = () => {
+export const searchMovies = (term) => {
     return async (dispatch) => {
         const response = await movies.get('/search/movie?', {
             params: {
                 api_key: KEY,
                 language: 'en-US',
-                query: 'avengers',
+                query: term,
                 page: 1,
                 include_adult: false,
             }
@@ -34,5 +34,12 @@ export const loadPopularMovies = () => {
         });
     };
 };
+
+export const inputChange = (value) => {
+    return {
+        type: 'INPUT_CHANGE',
+        payload: value
+    }
+}
 
 //If i want to fetch specific details I can make a fetchDetails action creator

@@ -20,6 +20,11 @@ export default (state = initialState, action) => {
                 movies: action.payload.results,
                 searched: true
             };
+        case 'INPUT_CHANGE':
+            return {
+                ...state,
+                searchQuery: action.payload
+            }
         default:
             return state;
     }
