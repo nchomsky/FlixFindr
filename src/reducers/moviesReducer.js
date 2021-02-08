@@ -14,7 +14,7 @@ export default (state = initialState, action) => {
         case 'SEARCH_MOVIES':
             return {
                 ...state,
-                movies: [action.payload.results]
+                movies: action.payload.results
             };
         default:
             return state;

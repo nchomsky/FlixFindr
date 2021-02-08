@@ -1,13 +1,13 @@
 import movies from '../apis/movies';
 const KEY = '01300e67fc753328e53597dcb77de4b4';
 //With thunk can return a asynchronous function instead of an object that is typically required
-export const searchMovies = () => {
-    return async (dispatch) => {
+export const searchMovies = (term) => {
+    return async (dispatch, term) => {
         const response = await movies.get('/search/movie?', {
             params: {
                 api_key: KEY,
                 language: 'en-US',
-                query: 'avengers',
+                query: term,
                 page: 1,
                 include_adult: false,
             }
@@ -15,7 +15,7 @@ export const searchMovies = () => {
 
         dispatch({
             type: 'SEARCH_MOVIES',
-            payload: response.results
+            payload: response.data
         });
     };
 };

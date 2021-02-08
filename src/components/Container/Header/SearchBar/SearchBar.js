@@ -1,14 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { searchMovies } from '../../../../actions';
 
 const SearchBar = () => {
+
+    const onSearch = (term) => {
+        term.preventDefault();
+        searchMovies(term);
+    }
+
     return (
         <form noValidate autoComplete="off" className="search">
-            <input type="text" placeholder="Search Movies" className="search__input" ></input>
+            <input type="text" placeholder="Search Movies" className="search__input" onChange={e => onSearch(e.currentTarget.value)}></input>
         </form>
     );
 
 }
 
-// onChange={e => onSearch(e.currentTarget.value)}
 
-export default SearchBar;
+export default connect(null, { searchMovies: searchMovies })(SearchBar);
