@@ -7,7 +7,7 @@ const initialState = {
     movieDetails: {}
 }
 
-export default (state = initialState, action) => {
+const moviesReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'LOAD_POPULAR_MOVIES':
             return {
@@ -46,3 +46,5 @@ export default (state = initialState, action) => {
     }
 
 }
+
+export default moviesReducer;
