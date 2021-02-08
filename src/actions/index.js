@@ -65,3 +65,9 @@ export const selectedMovie = (id) => {
         payload: id
     }
 };
+export const removeDetails = (value) => {
+    return {
+        type: 'REMOVE_MOVIE_DETAILS',
+        payload: value
+    }
+};

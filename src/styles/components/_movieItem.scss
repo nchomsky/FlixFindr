@@ -30,9 +30,11 @@
       font-size: 3rem;
       color: black;
     }
-
-    @include respond(small-desktop) {
-      object-fit: scale-down;
+    img {
+      @include respond(small-desktop) {
+        max-width: 100%;
+        height: auto;
+      }
     }
   }
 

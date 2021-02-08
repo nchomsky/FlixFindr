@@ -3,7 +3,6 @@ const initialState = {
     movies: [],
     searched: false,
     searchQuery: "",
-    modalOpen: false,
     selectedMovie: null,
     movieDetails: {}
 }
@@ -33,6 +32,11 @@ export default (state = initialState, action) => {
                 selectedMovie: action.payload
             };
         case 'FETCH_MOVIE_DETAILS':
+            return {
+                ...state,
+                movieDetails: action.payload
+            };
+        case 'REMOVE_MOVIE_DETAILS':
             return {
                 ...state,
                 movieDetails: action.payload

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import history from '../../history';
 import { connect } from 'react-redux';
-import { selectedMovie, fetchMovieDetails } from '../../actions/index';
+import { selectedMovie, fetchMovieDetails, removeDetails } from '../../actions/index';
 
 class MovieModal extends Component {
 
@@ -15,6 +15,8 @@ class MovieModal extends Component {
     onCloseHandler = () => {
         history.push('/');
         this.props.selectedMovie(null);
+        let obj = {};
+        this.props.removeDetails(obj);
     };
 
     render() {
@@ -38,4 +40,8 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { selectedMovie: selectedMovie, fetchMovieDetails: fetchMovieDetails })(MovieModal);
+export default connect(mapStateToProps, {
+    selectedMovie: selectedMovie,
+    fetchMovieDetails: fetchMovieDetails,
+    removeDetails: removeDetails
+})(MovieModal);
