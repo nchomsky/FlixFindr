@@ -1,5 +1,6 @@
 import movies from '../apis/movies';
 const KEY = '01300e67fc753328e53597dcb77de4b4';
+
 //With thunk can return a asynchronous function instead of an object that is typically required
 export const searchMovies = (term) => {
     return async (dispatch) => {
