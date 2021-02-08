@@ -4,6 +4,8 @@
   background-color: $color-grey-dark-4;
   border-radius: 10px;
   overflow: hidden;
+  display: flex;
+  flex-flow: column;
 
   min-height: 80rem;
 }
