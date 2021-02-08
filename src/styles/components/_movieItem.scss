@@ -21,6 +21,17 @@
     backface-visibility: hidden;
   }
 
+  &__image {
+    &--none {
+      padding-top: 8rem;
+      background-color: $color-white;
+      height: 30rem;
+      text-align: center;
+      font-size: 3rem;
+      color: black;
+    }
+  }
+
   &:hover {
     transform: scale(1.05);
   }
