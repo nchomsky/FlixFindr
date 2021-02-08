@@ -2,6 +2,7 @@
 const initialState = {
     movies: [],
     searched: false,
+    searchQuery: "",
     movieSelected: null
 }
 

@@ -5,7 +5,7 @@ import { searchMovies } from '../../../../actions';
 const SearchBar = () => {
 
     const onSearch = (term) => {
-        term.preventDefault();
+        console.log(term);
         searchMovies(term);
     }
 

@@ -10,6 +10,9 @@ class MovieGrid extends Component {
         this.props.loadPopularMovies();
     }
 
+    // Add componentDidUpdate to compare prior state to the newState and have it rerender the movies?
+    //Or will that happen automatically with redux form
+
     render() {
         console.log(this.props.movies);
         if (this.props.movies.length !== 0) {
@@ -24,7 +27,7 @@ class MovieGrid extends Component {
                     })}
                 </div>
             );
-        } else if (this.props.searched === true) {
+        } else if (this.props.searched === true && this.props.movies.length === 0) {
             return <MovieNotFound />
         } else {
             return <div></div>
