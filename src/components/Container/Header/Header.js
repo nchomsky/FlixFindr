@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SearchBar from './SearchBar/SearchBar';
 import { loadPopularMovies, inputChange } from '../../../actions';
 import { connect } from 'react-redux';
+import TMDBLogo from '../../../resources/TMDB_logo_long.png';
 
 class Header extends Component {
 
@@ -18,7 +19,9 @@ class Header extends Component {
             <header className="header">
                 <Link style={{ textDecoration: 'none', color: '#e31c25' }} onClick={this.clickHandler}><Logo /></Link>
                 <SearchBar />
-                <div style={{ visibility: 'hidden', width: '185px' }}></div>
+                <div className="databaseLogo">
+                    <img src={TMDBLogo} alt="The Movie Database logo" />
+                </div>
             </header>
         );
     }
