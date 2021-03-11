@@ -23,7 +23,7 @@ class MovieModal extends Component {
         return ReactDOM.createPortal(
             <div onClick={this.onCloseHandler} className="popup">
                 <div onClick={e => e.stopPropagation()} className="popup__content" >
-                    <div className="popup__content--title">{this.props.details.original_title}</div>
+                    <div className="popup__content--title">{this.props.details.title}</div>
                     <div className="popup__content--overview">{this.props.details.overview}</div>
                     <button className="popup__content--button" onClick={this.onCloseHandler}>Close</button>
                 </div >
